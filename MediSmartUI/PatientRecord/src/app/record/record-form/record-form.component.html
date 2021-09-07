@@ -1,0 +1,72 @@
+<form style="margin-top: 10px;" autocomplete="off" #form="ngForm" (ngSubmit)="submit(form)">
+    <input type="hidden" name="departmentId" [value]="service.formData.patientId" />
+
+    <div class="row g-3">
+        <div class="form-group col">
+            <label><small> PATIENT NAME </small></label>
+            <input class="form-control" placeholder=" Enter patient Name" name="name"
+                #name="ngModel" [(ngModel)]="service.formData.name" required>
+        </div>
+        <div class="form-group col">
+            <label><small>Occupation</small> </label>
+            <input class="form-control" placeholder="Enter patient occupation" name="occupation"
+                #occupation="ngModel" [(ngModel)]="service.formData.occupation" required>
+        </div>
+    </div>
+    <div class="row g-3">
+        <div class="form-group col">
+            <label><small> HMO Provider </small></label>
+            <input class="form-control" placeholder=" Enter provider" name="hmoProvider"
+                #hmoProvider="ngModel" [(ngModel)]="service.formData.hmoProvider" required>
+        </div>
+        <div class="form-group col">
+            <label><small>Age</small> </label>
+            <input class="form-control" placeholder="Enter age" name="age"
+                #age="ngModel" [(ngModel)]="service.formData.age" required>
+        </div>
+    </div>
+    <div class="row g-3">
+        <div class="form-group col">
+            <label><small> EmailAddress </small></label>
+            <input class="form-control" placeholder=" xxx@example.com" name="emailAddress"
+                #emailAddress="ngModel" [(ngModel)]="service.formData.emailAddress" required>
+        </div>
+        <div class="form-group col">
+            <label><small>Phone Number</small> </label>
+            <input class="form-control" maxlength="14" placeholder="+234xxxxxxxxxx" name="phoneNumber"
+                #phoneNumber="ngModel" [(ngModel)]="service.formData.phoneNumber" required>
+        </div>
+    </div>
+    <div class="row g-3">
+        <div class="form-group col">
+            <label><small> Date Of Visit </small></label>
+            <input class="form-control" type="date"  name="dateofVisit"
+                #dateOfvisit="ngModel" [(ngModel)]="service.formData.dateOfVisit" required>
+        </div>
+        <div class="form-group col">
+            <label><small>Next of Kin</small> </label>
+            <input class="form-control" placeholder="Enter name for next of kin" name="nextOfKinName"
+                #nextofKinName="ngModel" [(ngModel)]="service.formData.nextOfKinName" required>
+        </div>
+    </div>
+    <div class="row g-3">
+        <div class="form-group col">
+            <label><small> Illness</small></label>
+            <input class="form-control" placeholder=" Enter sickness" name="illness"
+                #illness="ngModel" [(ngModel)]="service.formData.illness" required>
+        </div>
+        <div class="form-group col">
+            <label><small>Home Address</small> </label>
+            <input class="form-control" placeholder="Enter home address" name="homeAddress"
+                #homeAddress="ngModel" [(ngModel)]="service.formData.homeAddress" required>
+        </div>
+    </div>
+    
+    <div class="row g-3">
+        <div class="form-group col">
+            <button style="margin-top: 40px;;" type="submit" [disabled]="!form.form.valid"
+                data-bs-toggle="modal" data-bs-target="#staticBackdrop" mat-raised-button color="primary">Submit</button>
+        </div>
+    </div>
+
+</form>

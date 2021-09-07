@@ -1,0 +1,62 @@
+<button style="margin-bottom: 40px; margin-left: 30px;" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+    mat-raised-button color="primary">Add Record</button>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">PATIENT RECORD</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <app-record-form></app-record-form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mat-elevation-z8">
+    <table class="table table-striped table-hover table-responsive">
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Occupation</th>
+                <th scope="col">HMO Provider</th>
+                <th scope="col">Age</th>
+                <th scope="col"> Email Address</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Date Of Visit</th>
+                <th scope="col">Next of Kin</th>
+                <th scope="col">Illness</th>
+                <th scope="col">Home Address</th>
+                <th scope="col"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rec of Records">
+                <td (click)="populateForm(rec)">{{rec.patientId}}</td>
+                <td (click)="populateForm(rec)">{{rec.name}}</td>
+                <td (click)="populateForm(rec)">{{rec.occupation}}</td>
+                <td (click)="populateForm(rec)">{{rec.hmoProvider}}</td>
+                <td (click)="populateForm(rec)">{{rec.age}}</td>
+                <td (click)="populateForm(rec)">{{rec.emailAddress}}</td>
+                <td (click)="populateForm(rec)">{{rec.phoneNumber}}</td>
+                <td (click)="populateForm(rec)">{{rec.dateOfVisit}}</td>
+                <td (click)="populateForm(rec)">{{rec.nextOfKinName}}</td>
+                <td (click)="populateForm(rec)">{{rec.illness}}</td>
+                <td (click)="populateForm(rec)">{{rec.homeAddress}}</td>
+                <td (click)="deleteRecord(rec.patientId)">
+                    <i class="bi bi-trash-fill text-danger"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of records">
+    </mat-paginator>
+</div>
